@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Processing</title>
+</head>
+<body>
+    <h1>Number Processing</h1>
+    <script>
+        let numbers = [];
+
+        function isInteger(value) {
+            return /^\d+$/.test(value);
+        }
+
+        function getInput() {
+            const input = prompt("Step 1 -> Please enter an integer number:");
+
+            if (input === null) {
+                return; // User clicked Cancel or closed the prompt
+            }
+
+            if (!isInteger(input)) {
+                alert("Error: Not an integer. Please enter a valid integer.");
+                getInput();
+            } else {
+                numbers.push(parseInt(input));
+                const continueProcessing = confirm("Step 5 -> Do you want to continue?");
+                if (continueProcessing) {
+                    getInput();
+                } else {
+                    finishProcessing();
+                }
+            }
+        }
+
+        function finishProcessing() {
+            if (numbers.length < 2) {
+                alert("Error: Insufficient data. Please enter at least two integer numbers.");
+                getInput();
+                return;
+            }
+
+            numbers.sort(function(a, b) {
+                return a - b;
+            });
+
+            const result = numbers[numbers.length - 1] - numbers[0];
+
+            document.body.innerHTML += "<p>Step 8 -> Sorted Array: " + numbers.join(", ") + "</p>";
+            document.body.innerHTML += "<p>Step 9 -> Result: " + result + "</p>";
+        }
+
+        getInput();
+    </script>
+</body>
+</html>

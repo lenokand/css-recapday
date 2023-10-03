@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+        .green{
+            background-color: green;
+        }
+        .red{
+            background-color: red;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .violet{
+            background-color: violet;
+        }
+        main{
+            display: flex;
+            overflow-x: hidden;
+            width: 100%;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+        section{
+            width: 100%;
+            height: 90vh;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+
+        }
+        nav a{
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <section id="slide1" class="green">1</section>
+        <section id="slide2" class="red">2</section>
+        <section id="slide3" class="yellow">3</section>
+        <section id="slide4" class="blue">4</section>
+        <section id="slide5" class="violet">5</section>
+    </main>
+    <nav>
+        <a href="#slide1">1</a>
+        <a href="#slide2">2</a>
+        <a href="#slide3">3</a>
+        <a href="#slide4">4</a>
+        <a href="#slide5">5</a>
+    </nav>
+    
+</body>
+</html>
